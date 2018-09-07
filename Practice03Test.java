@@ -75,7 +75,6 @@ public class Practice03Test {
 	
 	public double find_min_recursive (int index, double[] array) {
 		
-		//[2,1,4,3]
 		if (index == array.length-1) {
 			resIndex = index;
 			return array[index];
