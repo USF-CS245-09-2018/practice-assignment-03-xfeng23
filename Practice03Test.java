@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Random;
 
 
@@ -5,7 +6,7 @@ public class Practice03Test {
 
 	protected int count = 0;
 	protected double [] arr;
-
+	private int resIndex = -1;
 
 	/**
 	 * Constructor
@@ -54,11 +55,41 @@ public class Practice03Test {
 
 	public int find_min_iterative () {
 		// TODO: Fill in this iterative function.
+		int count = 0;
+		for(int i = 1; i < arr.length; i++) {
+			if(arr[i] < arr[count]) {
+				count = i;
+			}
+		}
+		return count;
 	}
 
 
 	public int find_min_recursive () {
 		// TODO: Fill in this recursive function.
+		
+		find_min_recursive(0, arr);
+		return resIndex;
+	
+	}
+	
+	public double find_min_recursive (int index, double[] array) {
+		
+		//[2,1,4,3]
+		if (index == array.length-1) {
+			resIndex = index;
+			return array[index];
+		}
+			
+		double tempRes = find_min_recursive(index+1, array);
+		if (array[index] < tempRes) {
+			resIndex = index;
+			return array[index];
+		}
+		
+		else {
+			return tempRes;
+		}
 	}
 
 
