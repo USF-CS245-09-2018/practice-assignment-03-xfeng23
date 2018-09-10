@@ -119,6 +119,21 @@ public class Practice03Test {
 		Practice03Test test = new Practice03Test(args);
 		test.print_array();
 		test.print_min();
+		
+		System.out.println();
+		System.out.println("------running time testing------");
+		long startTime = System.nanoTime();
+		test.find_min_iterative();
+		long endTime = System.nanoTime();
+		long totalTime = endTime - startTime;
+		System.out.println("running time for 'find_min_iterative': " + totalTime + " nanoseconds.");
+		System.out.println();
+		long startTime2 = System.nanoTime();
+		test.find_min_recursive();
+		long endTime2 = System.nanoTime();
+		long totalTime2 = endTime2 - startTime2;
+		System.out.println("running time for 'find_min_recurisve': " + totalTime2 + " nanoseconds.");
+		
 	}
 
 }
